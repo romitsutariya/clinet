@@ -7,7 +7,6 @@ function PostList() {
     const [posts,setPosts]=useState({});
     const fetchPost= async () =>{
         const res=await axios.get('http://localhost:8000/posts');
-        console.log("am calling")
         setPosts(res.data);
     }
    
