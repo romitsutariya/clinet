@@ -8,7 +8,7 @@ function PostCreate() {
     // post  localost:4000
     const onSumit = async (event) => {
         event.preventDefault();
-        await axios.post("http://localhost:4000/posts", {
+        await axios.post(`http://${process.env.REACT_APP_POST_HOST}/posts`, {
             title
         });
         setTitle('');

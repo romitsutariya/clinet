@@ -6,7 +6,7 @@ function PostList() {
 
     const [posts,setPosts]=useState({});
     const fetchPost= async () =>{
-        const res=await axios.get('http://localhost:8000/posts');
+        const res=await axios.get(`http://${process.env.REACT_APP_QUERY_HOST}/posts`);
         setPosts(res.data);
     }
    

@@ -2,10 +2,10 @@ import React, {useState} from 'react';
 import axios from 'axios'
 function CommentCreate({postId}) {
     const [content,setConstent]=useState('');
-
+    
     const onSubmit=async (event)=>{
         event.preventDefault();
-        axios.post(`http://localhost:5000/posts/${postId}/comments`,{
+        axios.post(`http://${process.env.REACT_APP_COMMENT_HOST}/posts/${postId}/comments`,{
             content
         }).catch(err=>console.log(err.message));
         setConstent('');
